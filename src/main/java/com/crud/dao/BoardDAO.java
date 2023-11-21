@@ -1,6 +1,7 @@
-package com.example.jspboardproject;
+package com.crud.dao;
 
 import com.crud.common.JDBCUtil;
+import com.crud.bean.BoardVO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,11 +15,11 @@ public class BoardDAO {
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
 
-	private final String BOARD_INSERT = "insert into BOARD (title, writer, content) values (?,?,?)";
-	private final String BOARD_UPDATE = "update BOARD set title=?, writer=?, content=? where seq=?";
-	private final String BOARD_DELETE = "delete from BOARD  where seq=?";
-	private final String BOARD_GET = "select * from BOARD  where seq=?";
-	private final String BOARD_LIST = "select * from BOARD order by seq desc";
+	private final String BOARD_INSERT = "insert into member_data (name, gender, phone_number, email, address, birthday, photo) values (?,?,?,?,?,?,?)";
+	private final String BOARD_UPDATE = "update member_data set isnotice=?, name=?, gender=?, phone_number=?, email=?, address=?, birthday=?, photo=? where seq=?";
+	private final String BOARD_DELETE = "delete from member_data  where seq=?";
+	private final String BOARD_GET = "select * from member_data  where seq=?";
+	private final String BOARD_LIST = "select * from member_data order by seq desc";
 
 	public int insertBoard(BoardVO vo) {
 		System.out.println("===> JDBC로 insertBoard() 기능 처리");
