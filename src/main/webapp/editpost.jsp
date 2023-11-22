@@ -12,3 +12,16 @@
 	int i=boardDAO.updateBoard(u);
 	response.sendRedirect("posts.jsp");
 %>
+
+<html>
+<head>
+	<title>Title</title>
+</head>
+<body>
+<form action="editpost2.jsp" method="post" enctype="multipart/form-data">
+	Photo: <input type="file" name="photo" value="<%= u.getPhoto()%>"/>
+	<input type="submit" value="upload" />
+	<input type="button" value="Cancel" onclick="history.back()"/></td></tr>
+</form>
+</body>
+</html>
